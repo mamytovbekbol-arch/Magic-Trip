@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Magic Trip — туры в Каракол, Ташкент и Алматы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b1646;--blue:#2f5bff;--sky:#e8f0ff;--sun:#ff8a3d;--bg:#f7faff;--card:#fff;--muted:#5b5f85;--line:#d9e2f7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="dark"]{--ink:#eef1ff;--blue:#6f8dff;--sky:#1a2150;--bg:#0f1230;--card:#171c47;--muted:#a3a9d6;--line:#2a3170}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#eef1ff;--blue:#6f8dff;--sky:#1a2150;--bg:#0f1230;--card:#171c47;--muted:#a3a9d6;--line:#2a3170;color-scheme:dark}}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Manrope,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Unbounded,Manrope,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;flex-direction:column;line-height:.8;font-family:Unbounded,sans-serif;font-weight:900}
+.logo small{font-size:11px;font-weight:700;color:var(--blue);margin-left:2px}
+.logo b{font-size:30px;letter-spacing:-.04em}
+nav{display:flex;gap:26px;font-weight:700;font-size:15px}
+nav a:hover{color:var(--blue)}
+.btn{display:inline-block;background:var(--blue);color:#fff;font-weight:700;padding:14px 26px;border-radius:999px;border:0;font:700 16px Manrope,sans-serif;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:var(--ink);color:var(--bg)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn.alt:hover{background:var(--ink);color:var(--bg)}
+.hero{position:relative;overflow:hidden;padding:72px 0 0;background:linear-gradient(180deg,var(--sky),var(--bg))}
+.hero h1{font-size:clamp(38px,8vw,92px);font-weight:900;max-width:900px}
+.hero h1 span{display:block;color:var(--blue)}
+.hero p{max-width:560px;color:var(--muted);font-size:19px;margin:24px 0 32px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.sun{position:absolute;right:8%;top:60px;width:110px;height:110px;border-radius:50%;background:var(--sun);animation:rise 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{transform:translateY(120px);opacity:0}to{transform:none;opacity:1}}
+.hero svg{display:block;width:100%;height:auto;margin-top:40px}
+.hero .wrap{position:relative;z-index:2}
+.stats{display:flex;flex-wrap:wrap;gap:40px;padding:34px 0}
+.stats div{font-family:Unbounded,sans-serif;font-weight:700;font-size:28px}
+.stats span{display:block;font:500 14px Manrope,sans-serif;color:var(--muted)}
+section{padding:84px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.head h2{font-size:clamp(28px,5vw,46px);max-width:640px}
+.head p{color:var(--muted);max-width:380px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.tour{background:var(--card);border:1px solid var(--line);border-radius:26px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s}
+.tour:hover{transform:translateY(-6px)}
+.pic{height:170px;position:relative;display:flex;align-items:flex-end;padding:16px;color:#fff;font-family:Unbounded,sans-serif;font-weight:700;font-size:13px}
+.pic i{position:absolute;right:-20px;bottom:-30px;font-size:130px;font-style:normal;opacity:.22}
+.pic em{font-style:normal;background:rgba(255,255,255,.22);padding:5px 12px;border-radius:99px;backdrop-filter:blur(4px)}
+.g1{background:linear-gradient(135deg,#2f5bff,#79b8ff)}
+.g2{background:linear-gradient(135deg,#1b1646,#4a63d9)}
+.g3{background:linear-gradient(135deg,#0e9f8e,#58d3a8)}
+.g4{background:linear-gradient(135deg,#ff8a3d,#ffc15e)}
+.g5{background:linear-gradient(135deg,#7b3fe4,#c08bff)}
+.g6{background:linear-gradient(135deg,#3a7d44,#a2d36b)}
+.tour div.b{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tour h3{font-size:20px}
+.tour p{margin:0;color:var(--muted);font-size:15px;flex:1}
+.tour a.go{font-weight:700;color:var(--blue)}
+.why{background:var(--ink);color:var(--bg)}
+.why .grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.why h3{font-size:18px;margin-bottom:10px}
+.why p{margin:0;opacity:.8;font-size:15px}
+.why .c{border-left:3px solid var(--sun);padding-left:18px}
+.why h2{color:var(--bg)}
+.why .head p{color:var(--bg);opacity:.75}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.form h2{font-size:clamp(28px,5vw,46px);margin-bottom:16px}
+.form p{color:var(--muted)}
+form{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px;display:grid;gap:14px}
+label{font-weight:700;font-size:14px;display:grid;gap:6px}
+input,select{font:500 16px Manrope,sans-serif;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.tg{background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:8px 14px;cursor:pointer;font:600 14px Manrope,sans-serif}
+@media (max-width:760px){nav{display:none}.form{grid-template-columns:1fr}.sun{width:70px;height:70px;right:6%;top:40px}section{padding:60px 0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="logo" href="#top" aria-label="Magic Trip"><small>✦ magic</small><b>trip</b></a>
+<nav><a href="#tours">Туры</a><a href="#why">О нас</a><a href="#book">Записаться</a><a href="#contacts">Контакты</a></nav>
+<a class="btn" href="https://wa.me/996707570424" target="_blank" rel="noopener">WhatsApp</a>
+</div></header>
+
+<main id="top">
+<div class="hero">
+<div class="sun" aria-hidden="true"></div>
+<div class="wrap">
+<h1>Путешествуй<span>с магией</span></h1>
+<p>Горнолыжные туры в Каракол, Ташкент, Алматы и конные походы по Кыргызстану. Новые туры каждую неделю.</p>
+<div class="cta"><a class="btn" href="#tours">Смотреть туры</a><a class="btn alt" href="#book">Записаться</a></div>
+<div class="stats"><div>20,4 тыс.<span>подписчиков в Instagram</span></div><div>592<span>публикации с поездок</span></div><div>каждую неделю<span>новые даты туров</span></div></div>
+</div>
+<svg viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true"><path d="M0 220V150L110 70l90 70 120-110 140 130 110-80 150 110 130-120 150 120 100-70 100 90v60z" fill="var(--blue)" opacity=".28"/><path d="M0 220V180l140-80 110 70 150-100 150 120 130-70 160 90 150-100 110 80 100-40v100z" fill="var(--ink)"/></svg>
+</div>
+
+<section id="tours"><div class="wrap">
+<div class="head"><h2>Актуальные туры</h2><p>Даты и цены уточняйте в WhatsApp: места в группах ограничены.</p></div>
+<div class="grid">
+<article class="tour"><div class="pic g1"><em>3 дня, 2 ночи</em><i>⛷</i></div><div class="b"><h3>Горнолыжный тур в Ала-Тоо резорт</h3><p>Каракол: трассы, снаряжение и проживание в отеле. Для новичков и опытных райдеров.</p><a class="go" href="#book" data-tour="Ала-Тоо резорт, Каракол">Записаться</a></div></article>
+<article class="tour"><div class="pic g2"><em>Предпродажи</em><i>🏔</i></div><div class="b"><h3>Каракол: горнолыжный сезон</h3><p>Горнолыжный тур на 3 дня и 2 ночи. Бронируйте раньше, пока есть места.</p><a class="go" href="#book" data-tour="Каракол, 3 дня 2 ночи">Записаться</a></div></article>
+<article class="tour"><div class="pic g3"><em>Узбекистан</em><i>🕌</i></div><div class="b"><h3>Тур в солнечный Узбекистан</h3><p>Ташкент и древние города: площади, мечети и восточная кухня.</p><a class="go" href="#book" data-tour="Узбекистан">Записаться</a></div></article>
+<article class="tour"><div class="pic g5"><em>Новый год</em><i>🎆</i></div><div class="b"><h3>Новогодний Ташкент</h3><p>Праздник в Ташкенте с гала-ужином. Тур выходных на любое число гостей.</p><a class="go" href="#book" data-tour="Новогодний Ташкент">Записаться</a></div></article>
+<article class="tour"><div class="pic g4"><em>30 ноября</em><i>🌲</i></div><div class="b"><h3>Комбо-тур на 3 дня</h3><p>Несколько локаций за одну поездку. Выезд 30 ноября.</p><a class="go" href="#book" data-tour="Комбо-тур 30 ноября">Записаться</a></div></article>
+<article class="tour"><div class="pic g6"><em>Конный тур</em><i>🐎</i></div><div class="b"><h3>Конный тур по горам</h3><p>Озёра, ущелья и ночёвки у реки. Подходит и тем, кто ни разу не сидел в седле.</p><a class="go" href="#book" data-tour="Конный тур">Записаться</a></div></article>
+</div></div></section>
+
+<section id="why" class="why"><div class="wrap">
+<div class="head"><h2>Почему едут с Magic Trip</h2><p>Мы сайт о краеведении и путешествиях: делаем поездки, о которых хочется рассказывать.</p></div>
+<div class="grid">
+<div class="c"><h3>Туры каждую неделю</h3><p>Выбирайте ближайшую дату и собирайтесь с друзьями.</p></div>
+<div class="c"><h3>Авторские маршруты</h3><p>Места и впечатления, которых нет в обычных турах.</p></div>
+<div class="c"><h3>Корпоративные туры</h3><p>Выезды для команды: организуем транспорт, отель и программу.</p></div>
+<div class="c"><h3>Честные отзывы</h3><p>Истории гостей собраны в Instagram, в разделе «Отзывы».</p></div>
+</div></div></section>
+
+<section id="book"><div class="wrap form">
+<div><h2>Оставьте заявку</h2><p>Выберите тур, и мы откроем WhatsApp с готовым сообщением. Менеджер подтвердит даты и стоимость.</p></div>
+<form id="f">
+<label>Ваше имя<input id="n" placeholder="Например, Айдана" required></label>
+<label>Тур<select id="t"><option>Ала-Тоо резорт, Каракол</option><option>Каракол, 3 дня 2 ночи</option><option>Узбекистан</option><option>Новогодний Ташкент</option><option>Комбо-тур 30 ноября</option><option>Конный тур</option><option>Алматы</option><option>Корпоративный тур</option></select></label>
+<label>Количество человек<input id="p" type="number" min="1" value="2"></label>
+<button class="btn" type="submit">Написать в WhatsApp</button>
+</form></div></section>
+</main>
+
+<footer id="contacts"><div class="wrap">
+<div><b>Magic Trip</b><br>Каракол, Ташкент, Алматы, конные туры</div>
+<div><a href="https://wa.me/996707570424" target="_blank" rel="noopener">WhatsApp +996 707 570 424</a><br><a href="https://www.instagram.com/magictrip.kg" target="_blank" rel="noopener">Instagram @magictrip.kg</a></div>
+<button class="tg" id="th" type="button">Тема: светлая / тёмная</button>
+</div></footer>
+
+<script>
+(function(){
+var f=document.getElementById('f');
+function msg(){return 'Здравствуйте! Меня зовут '+document.getElementById('n').value+'. Хочу записаться на тур: '+document.getElementById('t').value+'. Человек: '+document.getElementById('p').value+'.';}
+f.addEventListener('submit',function(e){e.preventDefault();window.open('https://wa.me/996707570424?text='+encodeURIComponent(msg()),'_blank','noopener');});
+document.querySelectorAll('[data-tour]').forEach(function(a){a.addEventListener('click',function(){var s=document.getElementById('t'),v=a.getAttribute('data-tour');for(var i=0;i<s.options.length;i++){if(s.options[i].text===v){s.selectedIndex=i;}}});});
+document.getElementById('th').addEventListener('click',function(){var r=document.documentElement,d=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);r.setAttribute('data-theme',d?'light':'dark');});
+})();
+</script>
+</body>
+</html>
